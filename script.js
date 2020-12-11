@@ -1,14 +1,15 @@
 const inputArea = document.getElementById("inputText");
 const outputArea = document.getElementById("outputText");
 const freqChart = document.getElementById("freqChart");
+const genBtn = document.getElementById("genButton")
 
 outputArea.addEventListener('keydown', (e) => {
   e.preventDefault()
 })
 
-inputArea.addEventListener("change", (e) => {
+genBtn.addEventListener("click", (e) => {
   const freqBody = document.getElementById("tableBody");
-  const Decipher = new DecipherTool(e.target.value);
+  const Decipher = new DecipherTool(inputArea.value);
   outputArea.value = Decipher.displayText;
 
   // Remove old table info
@@ -23,7 +24,6 @@ inputArea.addEventListener("change", (e) => {
   const addToTable = buildTable("tableBody");
   Decipher.frequencies.forEach(({ letter, freq }, idx) => {
     // Put the new table rows in the DOM
-
     const newLetterInput = document.createElement("input");
     newLetterInput.type = "text";
     newLetterInput.maxLength = "1";
