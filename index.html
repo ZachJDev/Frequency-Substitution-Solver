@@ -10,93 +10,100 @@
 
 <body>
     <h1>Substitution Cipher Solver</h1>
-    <div class="texts">
-        <div class="input">
-            <h2>Input:</h2>
-            <textarea id="inputText"></textarea>
+    <main class="main">
+
+        <div class="texts">
+            <div class="input">
+                <h2>Input:</h2>
+                <textarea  id="inputText"></textarea>
+            </div>
+            <button id="genButton">Generate new Output</button>
+            <div class="output">
+                <h2>Output:</h2>
+                <h4>(Cipher characters are uppercase, Replacement are lowercase)</h4>
+                <textarea id="outputText"></textarea>
+            </div>
         </div>
-        <div class="output">
-            <h2>Output:</h2>
-            <h3>(unchanged characters are uppercase, changed are lowercase)</h3>
-            <textarea id="outputText">
-
-            </textarea>
+        <div id="freqChartDiv">
+            <h2>Cipher Text Frequency List</h2>
+           
+            <table id="freqChart">
+                <thead>
+                    <tr>
+                        <th>Cipher Letter</th>
+                        <th>Frequency</th>
+                        <th>Replacement Letter</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                </tbody>
+                
+            </table>
         </div>
-    </div>
-    <div id="freqChartDiv">
-        <table id="freqChart">
-            <thead>
+        <div>
+            <h2>English Frequency List</h2>
+            <p><a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html">source</a></p>
+            <table id="englishFrequnecy">
+                <thead>
+                    <tr>
+                        <th>Letter</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                
                 <tr>
-                    <th>Cipher Letter</th>
-                    <th>Frequency</th>
-                    <th>Replacement Letter</th>
+                    <td>E</td>
+                    <td>12.02%</td>
                 </tr>
-            </thead>
-            <tbody id="tableBody">
-
-            </tbody>
-
-        </table>
-        <table id="englishFrequnecy">
-            <thead>
                 <tr>
-                    <th>Letter</th>
-                    <th>Frequency</th>
+                    <td>T</td>
+                    <td>9.10%</td>
                 </tr>
-            </thead>
-
-            <tr>
-                <td>E</td>
-                <td>12.02%</td>
-            </tr>
-            <tr>
-                <td>T</td>
-                <td>9.10%</td>
-            </tr>
-            <tr>
-                <td>A</td>
-                <td>8.12%</td>
-            </tr>
-            <tr>
-                <td>O</td>
-                <td>7.68%</td>
-            </tr>
-            <tr>
-                <td>I</td>
-                <td>7.31%</td>
-            </tr>
-            <tr>
-                <td>N</td>
-                <td>6.95%</td>
-            </tr>
-            <tr>
-                <td>S</td>
-                <td>6.28%</td>
-            </tr>
-            <tr>
-                <td>R</td>
-                <td>6.02%</td>
-            </tr>
-            <tr>
-                <td>H</td>
-                <td>5.92%</td>
-            </tr>
-            <tr>
-                <td>D</td>
-                <td>4.32%</td>
-            </tr>
-            <tr>
-                <td>L</td>
-                <td>3.98%</td>
-            </tr>
-            <tr>
-                <td>U</td>
-                <td>2.88%</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td>2.71%</td>
-            </tr>
+                <tr>
+                    <td>A</td>
+                    <td>8.12%</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>7.68%</td>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>7.31%</td>
+                </tr>
+                <tr>
+                    <td>N</td>
+                    <td>6.95%</td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>6.28%</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>6.02%</td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td>5.92%</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>4.32%</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>3.98%</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>2.88%</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>2.71%</td>
+                </tr>
             <tr>
                 <td>M</td>
                 <td>2.61%</td>
@@ -151,6 +158,7 @@
             </tr>
         </table>
     </div>
+</main>
     <script src="./Deciphered.js"></script>
     <script src="./BuildTable.js"></script>
     <script src="./script.js"></script>
