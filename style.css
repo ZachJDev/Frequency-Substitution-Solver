@@ -6,12 +6,17 @@ td {
 }
 td, th {
     max-width: 7rem;
+    text-align: center;
+}
+th {
+    height: 3rem;
+    padding: .3rem;
 }
 p {
     text-align: center;
     margin: 1rem auto;
 }
-
+/*Thank you MDN for the table styles */
 thead {
     background-color: #333;
     color: #fff;
@@ -29,7 +34,7 @@ textarea {
     height: 15vh
 }
 input {
-    max-width: 5rem;
+    width: 96%;
     border: none;
 }
 .main {
