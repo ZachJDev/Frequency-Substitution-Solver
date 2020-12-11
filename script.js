@@ -39,15 +39,13 @@ genBtn.addEventListener("click", (e) => {
 
     newLetterInput.addEventListener("input", (e) => {
       let replacement = e.target.value.toLowerCase();
-      if(Decipher.isAlpha(replacement) || replacement === ""){
-        // Revert the letter to it's original state after hitting backspace
-        if (replacement === "") Decipher.revertLetter(originalLetter);
-        else Decipher.updateLetter(originalLetter, replacement);
-        outputArea.value = Decipher.displayText;
       
-    } else{
-      e.target.value = ''
-    }
+      if(Decipher.isAlpha(replacement)) Decipher.updateLetter(originalLetter, replacement);
+      else if(replacement === "")  Decipher.revertLetter(originalLetter);
+      else e.target.value = ''
+    
+      outputArea.value = Decipher.displayText;
+
 
     });
   });
