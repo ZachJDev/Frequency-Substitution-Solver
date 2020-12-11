@@ -39,7 +39,6 @@ genBtn.addEventListener("click", (e) => {
 
     newLetterInput.addEventListener("input", (e) => {
       let replacement = e.target.value.toLowerCase();
-      
       if(Decipher.isAlpha(replacement)) Decipher.updateLetter(originalLetter, replacement);
       else if(replacement === "")  Decipher.revertLetter(originalLetter);
       else e.target.value = ''
