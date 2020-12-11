@@ -2,6 +2,10 @@ const inputArea = document.getElementById("inputText");
 const outputArea = document.getElementById("outputText");
 const freqChart = document.getElementById("freqChart");
 
+outputArea.addEventListener('keydown', (e) => {
+  e.preventDefault()
+})
+
 inputArea.addEventListener("change", (e) => {
   const freqBody = document.getElementById("tableBody");
   const Decipher = new DecipherTool(e.target.value);
