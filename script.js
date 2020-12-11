@@ -29,7 +29,7 @@ genBtn.addEventListener("click", (e) => {
     newLetterInput.maxLength = "1";
 
     addToTable(
-      `${letter}`,
+      `${letter}`.toUpperCase(),
       `${((freq / Decipher.length) * 100).toFixed(2)}%`,
       newLetterInput
     );
