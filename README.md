@@ -1,6 +1,6 @@
 # Substitution Cipher Solver
 
-A small tool to assist with solving substitution ciphers.
+A small tool to assist with solving [substitution ciphers](https://en.wikipedia.org/wiki/Substitution_cipher). Use it here: https://zachjdev.github.io/Frequency-Substitution-Solver/
 
 ## To Use
 
@@ -10,6 +10,6 @@ A small tool to assist with solving substitution ciphers.
 
 ## TO DO
 
- - [ ] Add support for characters other than the 26 in the English alphabet
- - [ ] Add support for switching the output between the original cipher-text case and the separated cases it displays now
- - [ ] make it prettier
+- [ ] Add support for characters other than the 26 in the English alphabet
+- [ ] Add support for switching the output between the original cipher-text case and the separated cases it displays now
+- [ ] make it prettier
