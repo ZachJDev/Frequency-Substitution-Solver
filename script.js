@@ -1,0 +1,44 @@
+const inputArea = document.getElementById("inputText");
+const outputArea = document.getElementById("outputText");
+const freqChart = document.getElementById("freqChart");
+
+inputArea.addEventListener("change", (e) => {
+  const freqBody = document.getElementById("tableBody");
+  const Decipher = new DecipherTool(e.target.value);
+  outputArea.value = Decipher.displayText;
+
+  // Remove old table info
+  freqChart.removeChild(freqBody);
+  // Add new table body with same id. appendChild returns the new node
+  const newTableBody = freqChart.insertAdjacentElement(
+    "beforeend",
+    document.createElement("tbody")
+  );
+
+  newTableBody.id = "tableBody";
+  const addToTable = buildTable("tableBody");
+  Decipher.frequencies.forEach(({ letter, freq }, idx) => {
+    // Put the new table rows in the DOM
+
+    const newLetterInput = document.createElement("input");
+    newLetterInput.type = "text";
+    newLetterInput.maxLength = "1";
+
+    addToTable(
+      `${letter}`,
+      `${((freq / Decipher.length) * 100).toFixed(2)}%`,
+      newLetterInput
+    );
+
+    // Set up event handler for each cipher letter
+    let originalLetter = letter.toLowerCase();
+
+    newLetterInput.addEventListener("input", (e) => {
+      let replacement = e.target.value.toLowerCase();
+      // Revert the letter to it's original state after hitting backspace
+      if (replacement === "") Decipher.revertLetter(originalLetter);
+      else Decipher.updateLetter(originalLetter, replacement);
+      outputArea.value = Decipher.displayText;
+    });
+  });
+});
