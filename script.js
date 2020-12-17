@@ -14,7 +14,7 @@ genBtn.addEventListener("click", (e) => {
 
   // Remove old table info
   freqChart.removeChild(freqBody);
-  // Add new table body with same id. appendChild returns the new node
+  // Add new table body with same id. 
   const newTableBody = freqChart.insertAdjacentElement(
     "beforeend",
     document.createElement("tbody")
